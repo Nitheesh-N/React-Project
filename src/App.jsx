@@ -23,6 +23,9 @@ export default function App() {
     setTasks(tasks.filter((_, i) => i !=index))
    }
 
+    const clearTasks = ()=>{
+    setTasks([]);
+    }
   return (
     <div className='App'>
       <header>
@@ -34,6 +37,7 @@ export default function App() {
       updateTask = {updateTask}
       deleteTask = {deleteTask} />
       <ProgressTracker tasks={tasks}/>
+      {tasks.length>0 && (<button onClick={clearTasks}>Clear all Task</button>)}
     </div>
 
   )
